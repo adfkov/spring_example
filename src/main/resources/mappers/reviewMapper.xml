@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.example.lesson03.mapper.ReviewMapper">
+	<select id="selectReview"
+	parameterType="int"
+ resultType="com.example.lesson03.domain.Review">
+	SELECT
+	`id`
+	,`storeId`
+	,`menu`
+	,`userName`
+	,`point`
+	,`review`
+	,`createdAt`
+	,`updatedAt`
+FROM
+	`new_review`
+WHERE
+	`id` = #{id}
+	</select>
+</mapper>

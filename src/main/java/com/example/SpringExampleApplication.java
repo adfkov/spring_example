@@ -12,7 +12,8 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 //@EnableAutoConfiguration(exclude={DataSourceAutoConfiguration.class})
-@MapperScan(basePackages ="com.example.*")
+@MapperScan(basePackages ="com.example.*") // repository 위치를 찾아줌
+
 
 @SpringBootApplication // 스프링 구동을 위한 필수 어노테이션 , 스프링 빈으로 등록됨
 	public class SpringExampleApplication {

@@ -4,16 +4,12 @@ import java.util.Date;
 
 // DTO, model , 
 public class UsedGoods {
-	// 필드
 	private int id;
-	private int ment;
+	private String title;
 	private int price;
-	private int lastment;
-	private Date createdAt;
-	private Date updatedAt;
+	private String description;
+	private String picture;
 	private int sellerId;
-	
-	// 메소드
 	
 	public int getId() {
 		return id;
@@ -21,11 +17,11 @@ public class UsedGoods {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getMent() {
-		return ment;
+	public String getTitle() {
+		return title;
 	}
-	public void setMent(int ment) {
-		this.ment = ment;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public int getPrice() {
 		return price;
@@ -33,23 +29,17 @@ public class UsedGoods {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	public int getLastment() {
-		return lastment;
+	public String getDescription() {
+		return description;
 	}
-	public void setLastment(int lastment) {
-		this.lastment = lastment;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	public Date getCreatedAt() {
-		return createdAt;
+	public String getPicture() {
+		return picture;
 	}
-	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
-	}
-	public Date getUpdatedAt() {
-		return updatedAt;
-	}
-	public void setUpdatedAt(Date updatedAt) {
-		this.updatedAt = updatedAt;
+	public void setPicture(String picture) {
+		this.picture = picture;
 	}
 	public int getSellerId() {
 		return sellerId;
