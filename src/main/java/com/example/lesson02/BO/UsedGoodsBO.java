@@ -16,12 +16,11 @@ import com.example.lesson02.DAO.UsedGoodsDAO;
 
 @Service
 public class UsedGoodsBO {
-	@Autowired
-	private UsedGoodsDAO usedGoodsDAO;
-	
-	public List<UsedGoods> getUsedGoodsList() {
-		return usedGoodsDAO.selectUsedGoodsList();
+//	@Autowired
+//	private UsedGoodsDAO usedGoodsDAO;
+//	
+//	public List<UsedGoods> getUsedGoodsList() {
+//		return usedGoodsDAO.selectUsedGoodsList();
 	}
-}
 	
 
