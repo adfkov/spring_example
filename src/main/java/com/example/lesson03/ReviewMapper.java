@@ -19,4 +19,9 @@ public interface ReviewMapper {
 			@Param("review")String review);
 		// String은 null 가능
 	
+	public int updatedReviewById(
+			@Param("id") int id, 
+			@Param("review") String review);
+
+	public int deleteReviewById(int id);
 }
