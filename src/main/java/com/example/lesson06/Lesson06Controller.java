@@ -1,5 +1,8 @@
 package com.example.lesson06;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +22,33 @@ public class Lesson06Controller {
 	// 회원 정보 추가 화면: http://localhost/lesson06/ex01/add-user-view
 	@Autowired
 	private UserBo userBO;
+	
+	// ---------ex02  http://localhost/lesson06/ex02/join-view
+	@GetMapping("/ex02/join-view")
+	public String joinView() {
+		return "lesson06/join";
+	}
+	
+	// 이름 중복 확인 --- AJAX로 요청
+	@ResponseBody
+	@RequestMapping("/ex01/is-duplication")
+	public Map<String, Object> isDuplication(
+			@RequestParam("name") String name) {
+		
+		// db 조회
+		boolean isDuplicated = userBO.existUserByName(name);
+		// 응답값
+		//{"code":200, "is_duplication": true}
+		Map<String, Object> result = new HashMap<>();
+		result.put("code", 200);
+		result.put("is_duplication", isDuplicated); // 중복이 맞음
+		return result;
+		
+	}
+	
+	
+	
+	// ---------ex02 끝 ---------
 	
 	@GetMapping("/ex01/add-user-view")
 	public String addUserView() {
@@ -46,6 +76,12 @@ public class Lesson06Controller {
 		User user = userBO.getLatestUser();
 		model.addAttribute("user",user);
 		return "lesson06/getLatestUser";
+	}
+	
+	// input: name output: boolean(중복 true)
+	public boolean existUserByName(String name) {
+		
+		return true;
 	}
 	
 	// -------------EX 01 끝
