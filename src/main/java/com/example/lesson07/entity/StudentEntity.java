@@ -21,9 +21,11 @@ import lombok.ToString;
 @AllArgsConstructor // 파라미터가 모두 있는 생성자
 @NoArgsConstructor // 파라미터 없는 기본 생성자
 @Getter
-@Builder // setter의 대용
-@Entity // 이 객체는 엔티티다. (JPA-DB와 통신 사이)
-@Table(name="new_student")
+@Builder(toBuilder = true)
+
+// setter의 대용
+@Entity(name="studentinfo")// 이 객체는 엔티티다. (JPA-DB와 통신 사이)
+@Table(name="studentinfo")
 public class StudentEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +37,7 @@ public class StudentEntity {
 	private String phoneNumber;
 	
 	private String email;
-	@Column(name = "dreamJob")
-	private String dreamJob;
+	private String dreamjob;
 	@UpdateTimestamp // 시간을 넣지 않아도 현재 시간으로 자동으로 들어감
 	@Column(name= "createdAt", updatable = false)	// 업데이트시 변경되지 않도록 설정
 	private ZonedDateTime createdAt;

@@ -29,5 +29,19 @@ public class Lesson07Ex01RestController {
 		
 	}
 	
-	@
+	// Update
+	@GetMapping("/2")
+	public StudentEntity update() {
+		
+		return studentBO.updateStudentDreamJobById(1, "디자이너");
+	}
+	
+	@GetMapping("/3")
+	public String delete() {
+		// id = 1
+		studentBO.deleteStudentById(1);
+		return "삭제 완료";
+	}
+	
+	
 }

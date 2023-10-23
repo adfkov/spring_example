@@ -32,9 +32,8 @@ private StudentBO studentBO;
 		studentBO.addStudent(student);
 		// db select => 방금 가입된 사람 , INSERT 가 일어난 후 세션 안에서 SELECT가 됨( 세션: INSERT, SELECT 쌍이라고 생각한다.)
 		 int id = student.getId();
-		Student latestStudent = studentBO.getStudentById(student.getId());
+		 
 		// view쪽 모델에 담아야한다.
-		model.addAttribute("student", latestStudent);
 		
 		return "lesson04/afterAddStudent";
 	}
