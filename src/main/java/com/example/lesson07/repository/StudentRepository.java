@@ -36,7 +36,11 @@ public interface StudentRepository extends JpaRepository<StudentEntity, Integer>
 	
 	// ex02/2
 	// 1) JPQL 엔티티로 조회
-	@Query(value = "select st from studentinfo st where st.dreamjob = :dreamjob") // 별칭 st로 엔티티 가져온다.
+	//@Query(value = "select st from studentinfo st where st.dreamjob = :dreamjob") // 별칭 st로 엔티티 가져온다.
+	//@Query(value = "select st from StudentEntity st where st.dreamjob = :dreamjob") // 별칭 st로 엔티티 가져온다.
+	
+	// 2) native query로 조회
+	@Query(value="select * from `studentinfo` where dreamjob = :dreamjob", nativeQuery = true)
 	public List<StudentEntity> findByDreamjob(@Param("dreamjob") String dreamjob); // mybatis 아님
 
 	
